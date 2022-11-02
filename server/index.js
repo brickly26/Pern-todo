@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const pool = require('./db');
+const pool = require('./database/db');
 const todoRoutes = require('./routes/todo')
 
 const app = express();
