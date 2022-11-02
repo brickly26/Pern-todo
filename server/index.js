@@ -1,10 +1,19 @@
 const express = require('express');
 const cors = require('cors');
 
+const pool = require('./db');
+const todoRoutes = require('./routes/todo')
+
 const app = express();
 
+// MIDDLEWARES
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
+
+// ROUTES //
+app.use('/todo', todoRoutes)
+
 
 const PORT = process.env.POR || 5050
 
