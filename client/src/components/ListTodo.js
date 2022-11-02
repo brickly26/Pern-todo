@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import EditTodo from "./EditTodo";
+
 const ListTodo = () => {
   const [todos, setTodos] = useState([]);
 
@@ -46,7 +48,7 @@ const ListTodo = () => {
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
               <td>
-                <button className="btn btn-warning">Update</button>
+                <EditTodo todo={todo} />
               </td>
               <td>
                 <button
